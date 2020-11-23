@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TuE-54-7qe">
+    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="KNZ-DY-dSS">
+            <objects>
+                <navigationController id="fKG-p9-mU2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p5e-yr-trS">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ko0-BO-x0o" kind="relationship" relationship="rootViewController" id="zCf-80-cz1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uf5-tZ-TAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-141" y="471"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="uLh-Ho-wA0">
+            <objects>
+                <collectionViewController id="Ko0-BO-x0o" customClass="DetailsViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oj3-Ak-mbI">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l3X-sz-BEf">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="20" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="Ko0-BO-x0o" id="R0u-k0-tbl"/>
+                            <outlet property="delegate" destination="Ko0-BO-x0o" id="elt-M0-8vZ"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="HgP-Iq-uFH"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txM-f4-bFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576" y="471"/>
+        </scene>
+        <!--Weather-->
+        <scene sceneID="iv1-Qn-gGi">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="W6h-Y6-gf1" customClass="MasterViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PYY-70-7hB">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="W6h-Y6-gf1" id="P2W-eC-dtC"/>
+                            <outlet property="delegate" destination="W6h-Y6-gf1" id="D7D-Ps-YFP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Weather" id="SLb-lb-MaG"/>
+                    <connections>
+                        <segue destination="fKG-p9-mU2" kind="showDetail" identifier="showDetail" id="Cah-wO-Plm"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOh-4v-lTM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576" y="-262"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XKR-e9-f0Z">
+            <objects>
+                <navigationController id="qlo-o3-Oww" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uog-AA-XMQ">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="W6h-Y6-gf1" kind="relationship" relationship="rootViewController" id="8hd-dc-mPM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zn4-vs-aAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-141" y="-262"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="wky-Ia-RCC">
+            <objects>
+                <splitViewController allowDoubleColumnStyle="YES" id="TuE-54-7qe" customClass="SplitViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="qlo-o3-Oww" kind="relationship" relationship="masterViewController" id="Sbs-cE-ahl"/>
+                        <segue destination="fKG-p9-mU2" kind="relationship" relationship="detailViewController" id="ZmD-l8-QrK"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4OR-Zy-cAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-858" y="40"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cah-wO-Plm"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
